@@ -499,13 +499,13 @@ class Host:
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Удалённая установка и настройка PostgreSQL на менее загружённом из двух серверов.",
-        epilog="Пример: ./deploy_postgres.py server1.example.com,198.51.100.27"  # Обновлен пример
+        epilog="Пример: ./deploy_postgres.py server1.example.com,198.51.100.27"
     )
     parser.add_argument("hosts", help="Два IP-адреса или DNS-имени через запятую")
 
     parser.add_argument(
         "--ssh-key",
-        default=str(Path.home() / ".ssh" / "id_rsa"),  # Изменено на id_rsa (приватный ключ)
+        default=str(Path.home() / ".ssh" / "id_rsa"),
         help="Путь к приватному SSH ключу пользователя root (по умолчанию: ~/.ssh/id_rsa)"
     )
     args = parser.parse_args()
